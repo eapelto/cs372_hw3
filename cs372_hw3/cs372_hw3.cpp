@@ -21,14 +21,13 @@ string RomanTester(int n)
 {
 	string romanNum;
 
-	if (n == 1)
+
+	for (int i = 1; i <= n; i++)
 	{
-		romanNum == "I";
+		romanNum += "I";
+
 	}
-		
-
 	
-
 	return romanNum;
 
 }
@@ -40,8 +39,9 @@ string RomanTester(int n)
 
 int main()
 {
-
-	assert(RomanTester(1) != "I");
+	assert(RomanTester(1) == "I");
+	assert(RomanTester(2) == "II");
+	assert(RomanTester(3) == "III");
 
 	
 	
