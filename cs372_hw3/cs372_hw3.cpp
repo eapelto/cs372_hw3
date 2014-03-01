@@ -11,45 +11,51 @@
 #include <iostream>
 #include <string> 
 #include <cassert>
+#include <vector>
+using std::vector;
 using std::cout;
 using std::endl;
 using std::string;
 string RomanTester(int);
 
 
+vector<int> VALUES = { 9, 5, 4, 1 };
+vector<string> SYMBOLS = { "IX", "V", "IV", "I" };
+
 string RomanTester(int n)
 {
 	string romanNum;
 
-
-	if (n == 9)
+	for (int i = 0; i < VALUES.size(); i++)
 	{
-		romanNum = "IX";
-		n -= 9;
+		if (n >= VALUES[i])
+		{
+			cout << n << endl;
+			romanNum = SYMBOLS[i];
+			n -= VALUES[i];
+			cout << n << endl;
+			break;
+		}
 	}
 
-	if (n >= 5)
+	cout << romanNum << endl;
+	//if no I's need to be put on then don't other wise loop threw the right amount of I's.
+	if (n != 0)
 	{
-		romanNum = "V";
-		n -= 5;
+
+		for (int i = 0; i < n; i++)
+		{
+			romanNum += "I";
+
+		}
 	}
 
-	if (n == 4)
-	{
-		romanNum = "IV";
-		n -= 4;
-	}
-
-	for (int i = 1; i <= n; i++)
-	{
-		romanNum += "I";
-
-	}
-	
+	cout << romanNum << endl;
 
 	return romanNum;
 
 }
+
 
 
 
