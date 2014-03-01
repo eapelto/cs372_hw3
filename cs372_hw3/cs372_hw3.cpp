@@ -21,32 +21,26 @@ string RomanTester(int n)
 {
 	string romanNum;
 
-	if (n == 6)
-	{
-		romanNum = "VI";
-		n -= 6;
-	}
 
-	else if (n == 5)
+
+	if (n >= 5)
 	{
 		romanNum = "V";
 		n -= 5;
 	}
 
-	else if (n == 4)
+	if (n == 4)
 	{
 		romanNum = "IV";
 		n -= 4;
 	}
 
-	else
+	for (int i = 1; i <= n; i++)
 	{
-		for (int i = 1; i <= n; i++)
-		{
-			romanNum += "I";
+		romanNum += "I";
 
-		}
 	}
+	
 
 	return romanNum;
 
@@ -64,7 +58,9 @@ int main()
 	//assert(RomanTester(3) == "III");
 	//assert(RomanTester(4) == "IV");
 	//assert(RomanTester(5) == "V");
-	assert(RomanTester(6) == "VI");
+	//assert(RomanTester(6) == "VI");
+	//assert(RomanTester(7) == "VII");
+	assert(RomanTester(8) == "VIII");
 
 	
 	
