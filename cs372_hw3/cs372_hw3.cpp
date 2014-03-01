@@ -12,19 +12,57 @@
 using std::cout;
 using std::endl;
 using std::string;
-void onetwothree();
+void onetwothree(int);
 string ConvertRomanNumerals(int);
-void yes();
+void CheckIfCorrect(bool);
 
 
-void onetwothree()
+void onetwothree(int n)
 {
-	if (ConvertRomanNumerals(1) == "I" && ConvertRomanNumerals(2) == "II" && ConvertRomanNumerals(3) == "III")
+	bool working = true;
+	string correctRomanNum = "I";
+
+
+	//Loop from 1 to 3 checking if the roman numerals are correct.
+	for (int i = 1; i <= n; i++)
 	{
-		cout << "All test's sussesful" << endl;
+		
+		if (ConvertRomanNumerals(i) == correctRomanNum)
+		{
+			cout << "Test Roman Numeral: " << i << " is " << correctRomanNum << endl;
+		}
+
+		else
+		{
+			working = false;
+			cout << "wrong romanNumeral" << endl;
+		}
+
+		correctRomanNum += "I";
 
 	}
 
+	CheckIfCorrect(working);
+
+
+
+}
+
+
+
+
+void CheckIfCorrect(bool b)
+{
+
+	//Checking if all the tests were successfull
+	if (b)
+	{
+		cout << "All tests successfull!" << endl;
+	}
+	else
+	{
+		cout << "Test not successfull" << endl;
+	}
 
 }
 
@@ -56,7 +94,7 @@ string ConvertRomanNumerals(int n)
 int main()
 {
 
-	onetwothree();
+	onetwothree(3);
 
 
 
