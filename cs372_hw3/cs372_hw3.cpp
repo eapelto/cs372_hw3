@@ -22,6 +22,11 @@ string RomanTester(int n)
 	string romanNum;
 
 
+	if (n == 9)
+	{
+		romanNum = "IX";
+		n -= 9;
+	}
 
 	if (n >= 5)
 	{
@@ -60,8 +65,8 @@ int main()
 	//assert(RomanTester(5) == "V");
 	//assert(RomanTester(6) == "VI");
 	//assert(RomanTester(7) == "VII");
-	assert(RomanTester(8) == "VIII");
-
+	//assert(RomanTester(8) == "VIII");
+	assert(RomanTester(9) == "IX");
 	
 	
 	
