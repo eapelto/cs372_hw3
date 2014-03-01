@@ -19,8 +19,8 @@ using std::string;
 string RomanTester(int);
 
 
-vector<int> VALUES = { 9, 5, 4, 1 };
-vector<string> SYMBOLS = { "IX", "V", "IV", "I" };
+vector<int> VALUES = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+vector<string> SYMBOLS = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
 string RomanTester(int n)
 {
@@ -30,15 +30,13 @@ string RomanTester(int n)
 	{
 		if (n >= VALUES[i])
 		{
-			cout << n << endl;
+			
 			romanNum = SYMBOLS[i];
 			n -= VALUES[i];
-			cout << n << endl;
 			break;
 		}
 	}
 
-	cout << romanNum << endl;
 	//if no I's need to be put on then don't other wise loop threw the right amount of I's.
 	if (n != 0)
 	{
@@ -50,7 +48,6 @@ string RomanTester(int n)
 		}
 	}
 
-	cout << romanNum << endl;
 
 	return romanNum;
 
@@ -72,7 +69,8 @@ int main()
 	//assert(RomanTester(6) == "VI");
 	//assert(RomanTester(7) == "VII");
 	//assert(RomanTester(8) == "VIII");
-	assert(RomanTester(9) == "IX");
+	//assert(RomanTester(9) == "IX");
+	assert(RomanTester(500) == "D");
 	
 	
 	
